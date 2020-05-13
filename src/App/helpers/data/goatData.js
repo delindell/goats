@@ -223,6 +223,14 @@ const goats = [
 
 const getGoats = () => goats;
 
+const freeGoat = (goatId) => {
+  goats.forEach((response) => {
+    if (response.id === goatId) {
+      response.isBusy = false;
+    }
+  });
+};
+
 const useGoat = (goatId) => {
   goats.forEach((response) => {
     if (response.id === goatId) {
@@ -231,4 +239,4 @@ const useGoat = (goatId) => {
   });
 };
 
-export default { getGoats, useGoat };
+export default { getGoats, useGoat, freeGoat };
